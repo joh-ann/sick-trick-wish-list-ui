@@ -1,0 +1,9 @@
+.trick {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+  width: 400px;
+  background-color: aliceblue;
+  border-radius: 12px;
+}
