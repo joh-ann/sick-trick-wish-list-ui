@@ -79,3 +79,4 @@ Delete a trick when the user clicks an `X` button.  The deletion should persist 
 ### Other Extensions
 * Add a counter for `Attempts` to each `Trick` card. User should be able to click an existing trick's `attempts` number. and increase the number representing how many times they've attemted this trick. 
 * Try writing out a few other tests to cover sad path testing for your network requests.
+# sick-trick-wish-list
