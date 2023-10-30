@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     getAllTricks();
-  })
+  }, [])
 
   function addTrick(newTrick) {
     setTricks([...tricks, newTrick])
