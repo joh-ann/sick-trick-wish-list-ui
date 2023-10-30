@@ -18,10 +18,22 @@ function App() {
     getAllTricks();
   }, [])
 
-  function addTrick(newTrick) {
-    setTricks([...tricks, newTrick])
-  }
+  // function addTrick(newTrick) {
+  //   setTricks([...tricks, newTrick])
+  // }
 
+  function addTrick(newTrick) {
+    return fetch('http://localhost:3001/api/v1/tricks', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newTrick)
+    })
+    .then(response => response.json())
+    .then(data => setTricks([...tricks, data]))
+    .catch(error => console.log(error.message))
+  }
   return (
     <div className="App">
       <h1>Sick Trick Wish List</h1>
