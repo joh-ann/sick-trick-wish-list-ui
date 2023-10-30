@@ -2,6 +2,7 @@ import './App.css';
 import React, { useEffect } from 'react';
 import { useState, setState } from 'react'
 import TricksList from '../TricksList/TricksList';
+import Form from '../Form/Form';
 
 function App() {
   const [tricks, setTricks] = useState([]);
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <h1>Sick Trick Wish List</h1>
+      <Form/>
       <TricksList tricks={tricks}/>
     </div>
   );
