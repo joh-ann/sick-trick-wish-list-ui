@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useEffect } from 'react';
-import { useState, setState } from 'react'
+import { useState } from 'react'
 import TricksList from '../TricksList/TricksList';
 import Form from '../Form/Form';
 
@@ -18,10 +18,14 @@ function App() {
     getAllTricks();
   })
 
+  function addTrick(newTrick) {
+    setTricks([...tricks, newTrick])
+  }
+
   return (
     <div className="App">
       <h1>Sick Trick Wish List</h1>
-      <Form/>
+      <Form addTrick={addTrick}/>
       <TricksList tricks={tricks}/>
     </div>
   );

@@ -1,10 +1,29 @@
-import { useState, setState } from 'react';
+import { useState } from 'react';
 
-function Form() {
+function Form({ addTrick }) {
   const [stance, setStance] = useState("")
   const [trickName, setTrickName] = useState("")
   const [obstacle, setObstacle] = useState("")
   const [link, setLink] = useState("")
+
+  function sendTrick(event) {
+    event.preventDefault()
+    const newTrick = {
+      stance: stance,
+      name: trickName,
+      obstacle: obstacle,
+      tutorial: link
+    }
+    addTrick(newTrick)
+    clearForm()
+  }
+
+  function clearForm() {
+    setStance("")
+    setTrickName("")
+    setObstacle("")
+    setLink("")
+  }
 
   return (
     <form>
@@ -32,9 +51,10 @@ function Form() {
       id="link-input"
       type="text"
       placeholder="Link to Tutorial"
+      value={link}
       onChange={event => setLink(event.target.value)}
       />
-      <button className="send-it-btn">
+      <button className="send-it-btn" onClick={(event) => sendTrick(event)}>
         Send It!
       </button>
     </form>
