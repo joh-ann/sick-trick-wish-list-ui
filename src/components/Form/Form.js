@@ -35,6 +35,7 @@ function Form({ addTrick }) {
       <input
       id="trick-input"
       type="text"
+      name="trickName"
       placeholder="Name of Trick"
       value={trickName}
       onChange={event => setTrickName(event.target.value)}
@@ -50,6 +51,7 @@ function Form({ addTrick }) {
       <input
       id="link-input"
       type="text"
+      name="link"
       placeholder="Link to Tutorial"
       value={link}
       onChange={event => setLink(event.target.value)}
