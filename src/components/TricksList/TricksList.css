@@ -1,5 +1,7 @@
 .all-tricks {
-  display: flex;
+  display: grid;
   justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 100%;
   gap: 20px;
 }
